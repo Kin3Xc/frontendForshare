@@ -34,14 +34,13 @@
 	          <input type="text" class="form-control" size="33" placeholder="Busca lo que necesites">
 	        </div>
 	        <button type="submit" class="btn btn-default btn-fab btn-raised mdi-action-search"></button>
-	        
       	</form>
 
 		<ul class="nav navbar-nav navbar-right menu-perfil">
-		<li class="notification">
+		<li ng-if="perfil.type" class="notification">
 			<a href="">
 				<!-- <i class="fa fa-bell-o"><span>5</span></i> -->
-				<i  ng-if="perfil.type" class="fa fa-bell"><span>5</span></i>
+				<i class="fa fa-bell"><span>5</span></i>
 			</a>
 		</li>
 		<li ng-if="perfil.type" class="dropdown" >

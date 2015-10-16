@@ -56,3 +56,14 @@ app.factory('Login_user', ['$http', '$localStorage', function($http, $localStora
  };
 
 }]);
+
+
+
+app.factory('Categorias', ['$http', function($http){
+  var baseUrl = "https://forshare-api.herokuapp.com";
+  return {
+    getCategorias: function(success, err){
+      $http.get(baseUrl+'/api/categorias').success(success).error(err)
+    }
+  }
+}]);

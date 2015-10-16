@@ -41,16 +41,8 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $location
 		.state('publicar',{
 			url: '/publicar',
 			templateUrl: 'partials/publicar.html',
-			controller: 'Account',
-			controllerAs: 'account'
-		})
-		.state('categoria',{
-			url: '/categoria',
-			templateUrl: 'partials/categoria.html'
-		})
-		.state('detalleArticulo',{
-			url: '/articulo/:idArticulo',
-			templateUrl: 'partials/detalle-articulo.html'
+			controller: 'Publicar',
+			controllerAs: 'publicar'
 		})
 
 		.state('edit_profile',{
@@ -82,3 +74,4 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $location
 	}]);
 
 });
+

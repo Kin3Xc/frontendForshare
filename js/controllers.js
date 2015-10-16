@@ -28,7 +28,7 @@ app.controller('Home',['$rootScope', '$scope', 'Login_user', '$location', functi
      };
 
 }]);
-
+ 
 
 // LOGIN
 app.controller('Login', ['$rootScope','$scope', '$location', '$localStorage', 'Login_user', function($rootScope, $scope, $location, $localStorage, Login_user){
@@ -110,6 +110,52 @@ app.controller('Account', ['$scope', function($scope){
     console.log('Controlador de Account');
 }]);
 
+
+
+app.controller('Publicar', ['$scope', 'Categorias', function($scope, Categorias){
+    var obj_publicar = {};
+
+    $scope.tipos = [
+        {
+            nombre: 'Compartir',
+            valor: 'Compartir'
+        },
+        {
+            nombre: 'Intercambio',
+            valor: 'Intercambio'
+        }
+    ];
+
+    // categorias
+    Categorias.getCategorias(function(res){
+        if (!res.type) {
+            $scope.categorias = null;
+            console.log('Error');
+        }else{
+            $scope.categorias = res.data;
+            console.log($scope.categorias);
+        }
+     },function() {
+        $rootScope.error = 'Failed to fetch details';
+    });
+
+
+    // publicar
+    $scope.publicar = function(){
+        console.log('Aquí voy');
+        obj_publicar = {
+            nombre: $scope.nombre,
+            categoria: $scope.categoria,
+            precio: $scope.precio,
+            dias: $scope.dias,
+            tipo: $scope.tipo,
+            descripcion: $scope.descripcion
+        };
+
+        console.log(obj_publicar);
+    }
+
+}]);
 
 
 

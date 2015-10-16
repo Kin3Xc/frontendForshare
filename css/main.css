@@ -73,13 +73,22 @@
 
 
 /*vista home*/
+.view_home{
+	margin-bottom: 85px;
+}
 .home{
 	font-family: 'Aileron-UltraLight';
 	background-color: #FFF;
 	color: #2c3e50 !important;
 	margin: 0;
 	padding: 0;
-	margin: 40px 0;
+	margin-top: 29px;
+}
+
+.home h3{
+	padding: 0;
+	margin: 0;
+	margin-bottom: 18px;
 }
 
 .home p{
