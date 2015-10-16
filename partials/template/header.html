@@ -1,0 +1,69 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+        $('#header').animate({
+            'opacity':'1'
+        }, 2500);
+    });
+</script>
+
+
+<div class="navbar navbar-warning bar-1" ng-controller="Home" id="header">
+	<div clas="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		    <div class="logo-inicio">
+		    	<a class="navbar-brand" href="#/home"><span>Forshare</span></a>
+			</div>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav menu2">
+			<!-- <li><a href="#">Buscar</a></li> -->
+			<li><a href="#/publicar">Compartir</a></li>
+		</ul>
+
+		<form class="navbar-form navbar-left" role="search">
+	        <div class="form-group"> 
+	          <input type="text" class="form-control" size="33" placeholder="Busca lo que necesites">
+	        </div>
+	        <button type="submit" class="btn btn-default btn-fab btn-raised mdi-action-search"></button>
+	        
+      	</form>
+
+		<ul class="nav navbar-nav navbar-right menu-perfil">
+		<li class="notification">
+			<a href="">
+				<!-- <i class="fa fa-bell-o"><span>5</span></i> -->
+				<i  ng-if="perfil.type" class="fa fa-bell"><span>5</span></i>
+			</a>
+		</li>
+		<li ng-if="perfil.type" class="dropdown" >
+
+			<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img ng-src="{{ perfil.data.avatar }}" alt=""> {{ perfil.data.nombre }} <span class="caret"></span></a>
+
+			<ul class="dropdown-menu">
+	            <li><a href="#/account">Mi cuenta</a></li>
+	            <li><a href="#edit_profile">Editar perfil</a></li>
+	            <li><a href="#edit_profile">Cambiar password</a></li>
+				
+	            <li class="divider"></li>
+	            <li><a ng-click="logout()" href="#">Cerrar sesión</a></li>
+	        </ul>
+		</li>
+
+		<!-- Ocultar si esta logueado el usuario -->
+
+		<li class="auth" ng-if="!perfil.type"><a href="#/login">Ingresar</a></li>
+		<li class="auth" ng-if="!perfil.type"><a href="#/signup">Registrar</a></li>
+		
+		</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,88 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+
+<div class="container">
+	<div class="row publicar">
+		<div class="col-md-12 ">
+			<div class="info-articulo">
+				<h1>Publicar artículo</h1>
+				<p>Ingrese los siguientes campos para publicar su artículo</p>
+			</div>
+			<form>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="label-control" for="articulo">Nombre artículo</label>
+						<div class="input-group text">
+							<span class="input-group-addon icon-text" id="articulo"><i class="fa fa-pencil-square-o"></i></span>
+							<input class="form-control" type="text" name="articulo" id="articulo">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="label-control" for="categoria">Categoría</label>
+						<div class="input-group text">
+							<span class="input-group-addon icon-text" id="categoria"><i class="fa fa-server"></i></span>
+							<select class="form-control" name="categoria" id="categoria">
+								<option style="display:none" value="">Seleccione</option>
+			                    <option value="Sobre">Libros</option>
+			                    <option value="Paquete">Música</option>
+			                    <option value="Otro">Videojuegos</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="label-control" for="imagenes">Imagenes</label>
+						<div class="input-group text">
+							<span class="input-group-addon icon-text" id="imagenes"><i class="fa fa-picture-o"></i></span>
+							<input  type="text" readonly="" class="form-control floating-label" placeholder="Puede seleccionar varias imagenes">
+							<input class="form-control" type="file" name="imagenes" id="imagenes">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="label-control" for="valor">Valor</label>
+						<div class="input-group text">
+							<span class="input-group-addon icon-text" id="valor"><i class="fa fa-money"></i></span>
+							<input class="form-control" type="text" name="valor" id="valor"> 
+						</div>
+						<!-- <span>Total: $</span> -->
+					</div>
+
+					<div class="form-group">
+						<label class="label-control" for="dias">Dias a prestar</label>
+						<div class="input-group text">
+							<span class="input-group-addon icon-text" id="dias"><i class="fa fa-calendar-check-o"></i></span>
+							<input class="form-control" type="text" name="dias" id="dias"> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="descripcion col-md-8">
+						<div class="form-group">
+							<label class="label-control" for="desc">Descripción</label>
+							<div class="input-group text">
+								<span class="input-group-addon icon-text" id="desc"><i class="fa fa-comment-o"></i></span>
+								<textarea class="form-control" name="" id="" cols="5" rows="5"></textarea>
+							</div>
+
+							<div class="form-group btn-publicar">
+								<button type="submit" class="btn btn-warning">Publicar artículo</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+

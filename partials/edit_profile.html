@@ -1,0 +1,108 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+
+<!-- barra de categorias -->
+
+<div class="navbar navbar bar-account">
+	<div clas="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		</div>
+		
+		<div class="container">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+		<ul class="nav navbar-nav">
+			<li><a href="#/account">Cuenta</a></li>
+			<li class="active"><a href="#/edit_profile">Editar perfil</a></li>
+			<li><a href="#">Mis artículos</a></li>
+		</ul>
+
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row account">
+		<div class="col-md-12 ">
+			<div class="perfil">
+				<h1 class="edit-title">Actualizar mis datos</h1>
+
+				<div class="col-md-4 info">
+					<img src="images/avatar.jpg" alt="Elkin Urango">
+					<button class="btn btn-success">Cambiar imagen</button>
+				</div>
+
+				<div class="col-md-6">
+					<form>
+						<div class="form-group">
+							<label class="label-control" for="nombre">Nombre</label>
+							<input class="form-control" type="text" name="nombre" id="nombre" value="Elkin Urango">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="identi">Numero de identificación</label>
+							<input class="form-control" type="text" name="identificacion" id="identi" value="1073987117">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="email">Email</label>
+							<input class="form-control" type="text" name="email" id="email" value="kin3xc@hotmail.com">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="ocupacion">Ocupación</label>
+							<input class="form-control" type="text" name="cupacion" id="ocupacion" value="Backend Developer">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="telefono">Teléfono</label>
+							<input class="form-control" type="text" name="telefono" id="telefono" value="3123338831">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="pais">Pais</label>
+							<input class="form-control" type="text" name="pais" id="pais" value="Colombia">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="ciudad">Ciudad</label>
+							<input class="form-control" type="text" name="ciudad" id="ciudad" value="Bogotá">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="dirección">Dirección</label>
+							<input class="form-control" type="text" name="dirección" id="dirección" value="Calle 92 # 11 - 32">
+						</div>
+
+						<div class="form-group">
+							<label class="label-control" for="bio">Biografía</label>
+							<!-- <input class="form-control" type="text" name="bio" id="bio"> -->
+							<textarea class="form-control" name="bio" id="bio" cols="" rows="5">
+								Desarrollador web y móvil full stack Nodejs, Express, MongoDB, Angular, HTML5, CSS3, Bootstrap, Ionic Framework, con mas de 3 años de experiencia desarrollando proyectos para diferentes clientes y propios, actualmente me desempeño como programador freelancer.
+							</textarea>
+						</div>
+
+						<div class="form-group btn-update">
+							<button class="btn btn-warning" type="submit">Actualizar datos</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+

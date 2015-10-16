@@ -1,0 +1,45 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+        $('#signup').animate({
+            'opacity':'1'
+        }, 1500);
+    });
+</script>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="login" id="signup">
+				<div class="panel panel-default">
+			    <div class="panel-body">
+					<form ng-submit="signup.signup()">
+						<p>¿Ya tienes un usuario con nosotros? <a href="#/login">Iniciar sesión</a></p>
+						<button class="btn btn-large btn-facebook"><i class="fa fa-facebook"></i> | Regístrate con Facebook</button>
+						<div class="form-group">
+							<label class="control-label" for="nombre">Nombre</label>
+							<input ng-model="signup.nombre" class="form-control" type="text" name="nombre" id="nombre">
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="email">Email</label>
+							<input ng-model="signup.email" class="form-control" type="email" name="email" id="email">
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="password">Password</label>
+							<input ng-model="signup.password" class="form-control" type="password" name="password" id="password">
+						</div>
+				
+						<div class="form-group">
+							<button type="submit" class="btn btn-warning btn-lg btn-block">Registrar</button>
+						</div>
+					</form>
+			    </div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
