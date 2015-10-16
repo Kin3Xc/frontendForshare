@@ -305,6 +305,25 @@
     background-color: rgb(60, 60, 60) !important;
 }
 /* <<<--- END DetalleArticulo --->>> */
+/* <<<--- Informacion-persona --->>> */
+.Informacion-foto img{
+    display: block;
+    width: 50%;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.Informacion-title{
+    font-size: 2em !important;
+    font-weight: bolder;
+    margin: 10px 0;
+}
+/* <<<--- END Informacion-persona --->>> */
+/* <<<--- DetalleArticulo --->>> */
+.Preguntas-foto img{
+    width: 100%;
+    border-radius: 50%;
+}
+/* <<<--- END Informacion-persona --->>> */
 /* <<<--- DetalleArticulo --->>> */
 .DetalleArticulo{
 
