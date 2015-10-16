@@ -79,7 +79,7 @@
 	color: #2c3e50 !important;
 	margin: 0;
 	padding: 0;
-	margin-bottom: 40px;
+	margin: 40px 0;
 }
 
 .home p{
@@ -271,9 +271,23 @@
 	margin: 15px;
 }
 /*end Publicar*/
+/* <<<--- DetalleArticulo --->>> */
+.DetalleArticulo{
 
+}
+.DetalleArticulo-info{
+    text-align: center;
+    margin: 20px 0;
+}
+.DetalleArticulo-galeria{
+    width: 100%;
+}
+.DetalleArticulo-img{
+    width: 100%;
 
+}
 
+/* <<<--- end DetalleArticulo --->>> */
  /*footer*/
 .footer{
 	margin: 0;
