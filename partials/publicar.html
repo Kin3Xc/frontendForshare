@@ -28,8 +28,20 @@
 						<label class="label-control" for="categoria">Categoría</label>
 						<div class="input-group text">
 							<span class="input-group-addon icon-text" id="categoria"><i class="fa fa-server"></i></span>
-							<select ng-model="publicar.categoria" class="form-control" name="categoria" id="categoria" ng-options="categoria._id as categoria.nombre for categoria in categorias">
+							<!-- <select ng-model="publicar.categoria" class="form-control" name="categoria" id="categoria" ng-options="categoria._id as categoria.nombre for categoria in categorias">
 								<option style="display:none" value="">Seleccione</option>
+							</select> -->
+							<select ng-model="publicar.categoria" class="form-control" name="categoria" id="categoria">
+								<option style="display:none" value="">Seleccione</option>
+								<option value="Libros">Libros</option>
+								<option value="Música">Música</option>
+								<option value="Videojuegos">Videojuegos</option>
+								<option value="Películas">Películas</option>
+								<option value="Muebles">Muebles</option>
+								<option value="Accesorios">Accesorios</option>
+								<option value="Juguetes">Juguetes</option>
+								<option value="Instrumentos musicales">Instrumentos musicales</option>
+								<option value="Instrumentos musicales">Accesorios para Vehículos</option>
 							</select>
 						</div>
 					</div>

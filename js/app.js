@@ -44,18 +44,11 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $location
 			controller: 'Publicar',
 			controllerAs: 'publicar'
 		})
-		.state('categoria',{
-			url: '/categoria',
-			templateUrl: 'partials/categoria.html'
-		})
-		.state('categorias',{
-			url: '/categorias',
-			templateUrl: 'partials/categorias.html'
-		})
-		.state('detalleArticulo',{
-			url: '/articulo/:idArticulo',
-			templateUrl: 'partials/detalle-articulo.html'
-		})
+
+		// .state('detalleArticulo',{
+		// 	url: '/articulo/:idArticulo',
+		// 	templateUrl: 'partials/detalle-articulo.html'
+		// })
 
 		.state('edit_profile',{
 			url: '/edit_profile',
