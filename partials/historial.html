@@ -1,0 +1,83 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+
+
+<!-- barra de categorias -->
+
+<div class="navbar navbar bar-account">
+	<div clas="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		</div>
+		
+		<div class="container">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+		<ul class="nav navbar-nav">
+			<li><a href="#/carrito">Mi carrito</a></li>
+			<li class="active"><a href="#/historial">Mi historial</a></li>
+			<li><a href="#/notification">Notificaciones</a></li>
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right carrito" ng-controller="Home">
+			<li><a href="#/carrito"><i class="fa fa-cart-arrow-down"></i><span>{{count}}</span></a></li>
+		</ul>
+
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container view_home">
+<div class="row historial">
+	<div class="col-md-12">
+		<h1>Historial de pedidos</h1>
+		<hr>
+		<div class="panel panel-default">
+			
+		    <div class="panel-heading">
+		    	Artículos
+		    </div>
+		    <div class="panel-body">
+		        <table class="table">
+		        	<thead>
+			    		<tr style="text-align: center; text-transform: uppercase;">
+			    			<th>Artículo</th>
+			    			<th>Entrega</th>
+			    			<th>Valor</th>
+			    			<th>Estado</th>
+			    		</tr>
+			    	</thead>
+			        <tbody>
+			        	<tr>
+			        		<td>Camara fotográfica</td>
+			        		<td><span class="badge">Entregado</span></td>
+			        		<td>CO$ 50.000</td>
+			        		<td><span class="label label-success">Disponible</span></td>
+			        	</tr>
+			        	<tr>
+			        		<td>Camara fotográfica</td>
+			        		<td>20 días</td>
+			        		<td>CO$ 50.000</td>
+			        		<td><span class="label label-warning">Prestado</span></td>
+			        	</tr>
+			        </tbody>
+		        </table>
+				<hr>
+		    </div>
+		</div>
+	</div>
+</div>
+</div>
+

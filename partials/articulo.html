@@ -1,0 +1,219 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+
+
+<!-- barra de categorias -->
+
+<div class="navbar navbar bar-2">
+	<div clas="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		</div>
+
+		<div class="container">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+		<ul class="nav navbar-nav">
+			<!-- <li><a href="#/account">Cuenta</a></li>
+			<li><a href="#/edit_profile">Editar perfil</a></li>
+			<li><a href="#">Mis artículos</a></li> -->
+			
+			<li><a>Categoría: <span class="badge">{{articulo.articulo[0].categoria}}</span></a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right carrito" ng-controller="Home">
+			<li><a href="#/carrito"><i class="fa fa-cart-arrow-down"></i><span>{{count}}</span></a></li>
+		</ul>
+
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row articulo">
+		
+		<div class="col-md-12">
+			<h1>Detalle del artículo</h1>
+			<hr>
+		</div>
+
+
+		<div class="col-md-12 ">
+			<div class="detalle-articulo col-md-8">
+				
+				<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+				<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+				    <!-- The container for the modal slides -->
+				    <div class="slides"></div>
+				    <!-- Controls for the borderless lightbox -->
+				    <h3 class="title"></h3>
+				    <a class="prev">‹</a>
+				    <a class="next">›</a>
+				    <a class="close">×</a>
+				    <a class="play-pause"></a>
+				    <ol class="indicator"></ol>
+				    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+				    <div class="modal fade">
+				        <div class="modal-dialog">
+				            <div class="modal-content">
+				                <div class="modal-header">
+				                    <button type="button" class="close" aria-hidden="true">&times;</button>
+				                    <h4 class="modal-title"></h4>
+				                </div>
+				                <div class="modal-body next"></div>
+				                <div class="modal-footer">
+				                    <button type="button" class="btn btn-default pull-left prev">
+				                        <i class="glyphicon glyphicon-chevron-left"></i>
+				                        Previous
+				                    </button>
+				                    <button type="button" class="btn btn-primary next">
+				                        Next
+				                        <i class="glyphicon glyphicon-chevron-right"></i>
+				                    </button>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+	
+
+				<div id="links">
+				    <div class="row">
+				    	<a ng-repeat="imagen in articulo.articulo[0].imagenes"  href="http://forshare.co/test/php/uploads/{{imagen}}" title="Libro de rails" data-gallery>
+				        <img ng-src="http://forshare.co/test/php/uploads/{{imagen}}" alt="{{articulo.articulo[0].articulo}}">
+					    </a>
+					  <!--   <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a>
+					    <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a>
+					    <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a>
+					    <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a> -->
+				    </div>
+
+				    <div class="row">
+				    	<!-- <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+				        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a>
+					    <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a>
+					    <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a>
+					    <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a>
+					    <a href="images/avatar1.png" title="Libro de rails" data-gallery>
+					        <img src="images/thumbnails/avatar.jpg" alt="Banana">
+					    </a> -->
+				    </div>
+				</div>
+
+				<div class="row">
+					<div class="info_articulo col-md-6 col-lg-6">
+						<h4>{{articulo.articulo[0].articulo}}</h4>
+
+						<p>{{articulo.articulo[0].descripcion}}</p>
+
+						<div class="data">
+							<p><span class="label label-success valor_articulo">{{articulo.articulo[0].precio | currency : 'CO$' : 0}}</span></p>
+
+							<div class="publicacion">
+								<p>Periodo<span>: {{articulo.articulo[0].dias}} días</span>  Publicado:<span>{{articulo.articulo[0].createdAt}}</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="usuario_articulo col-md-4">
+			<div class="panel panel-default">
+			    <div class="panel-body">
+					<h4>Publicado por</h4>
+					<img ng-src="{{articulo.articulo[0].id_user.avatar}}" alt="">
+					<p>{{articulo.articulo[0].id_user.nombre}}</p>
+
+					<div class="btn-accion">
+						<button ng-click="articulo.pedir_prestado(articulo.articulo[0])" class="btn btn-warning">Pedir prestado</button>
+					</div>
+
+					<div class="alert alert-dismissable alert-success" ng-show="articulo.ver_noti">
+					    <button type="button" class="close" data-dismiss="alert">×</button>
+					    <strong>{{articulo.mensaje}}</strong> 
+					</div>
+			    </div>
+			</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+				    <div class="panel-heading">¿Quieres preguntar algo?</div>
+				    <div class="panel-body">
+				        <div class="list-group">
+
+				        	<div class="list-group-item">
+				        		<form ng-submit="articulo.add_comentario()" class="frm-comentarios">
+				        			<div class="form-group">
+				        				<label class="label-control" for="">Comentario</label>
+				        				<textarea ng-model="articulo.comentario" required class="form-control" rows="3" id="textArea"></textarea>
+				        			</div>
+				        			<div class="form-group">
+				        				<button class="btn btn-success" type="submit">Comentar</button>
+				        			</div>
+				        		</form>
+				        	</div>
+
+							<div class="comentarios" ng-repeat="comentario in articulo.comentarios">
+				        	<div class="list-group-item">
+						        <div class="row-picture">
+						            <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
+						        </div>
+						        <div class="row-content">
+						            <h4 class="list-group-item-heading">{{comentario.usuario}}</h4>
+						            <p class="list-group-item-text">{{comentario.comentario}}</p>
+						        </div>
+						    </div>
+						    <div class="list-group-separator"></div>
+						    </div>
+
+
+
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+
+			
+	</div>
+</div>
+
+<div class="row mapa">
+	<!-- <div class="col-md-12"> -->
+		<div id="map-section">
+			<div id="map_canvas">
+				
+			</div>
+		</div>
+	<!-- </div> -->
+</div>

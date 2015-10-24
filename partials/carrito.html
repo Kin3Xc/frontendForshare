@@ -1,0 +1,157 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+
+
+<!-- barra de categorias -->
+
+<div class="navbar navbar bar-account">
+	<div clas="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		</div>
+		
+		<div class="container">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#/carrito">Mi carrito</a></li>
+			<li><a href="#/historial">Mi historial</a></li>
+			<li><a href="#/notification">Notificaciones</a></li>
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right carrito" ng-controller="Home">
+			<li><a href="#/carrito"><i class="fa fa-cart-arrow-down"></i><span>{{count}}</span></a></li>
+		</ul>
+
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container view_home" ng-controller="Home">
+<div class="row carrito">
+	<div class="col-md-12">
+		<h1>Confirma tu pedido</h1>
+		<hr>
+		<div class="panel panel-default">
+			
+		    <div class="panel-heading">
+		    	Artículos
+		    </div>
+		    <div class="panel-body">
+		        <table class="table">
+		        	<thead>
+			    		<tr style="text-align: center; text-transform: uppercase;">
+			    			<th>Artículo</th>
+			    			<th>Estado</th>
+			    			<th>Entrega</th>
+			    			<th>Valor</th>
+			    			<th>Confirmar</th>
+			    		</tr>
+			    	</thead>
+			        <tbody>
+			        	<tr ng-repeat="pedido in pedidos">
+			        		<td>{{pedido.articulo}}</td>
+			        		<td>{{pedido.estado}}</td>
+			        		<td>{{pedido.dias}} días</td>
+			        		<td>{{pedido.precio | currency : 'CO$' : 0}}</td>
+			        		<td>
+			        			<div class="row-action-primary checkbox">
+						            <label>OK<input checked type="checkbox"></label>
+						        </div>
+			        		</td>
+			        	</tr>
+			        </tbody>
+		        </table>
+				<hr>
+		        <div class="total">
+		        	<span>Total: {{precioTotal | currency : 'CO$' : 0}}</span>
+		        </div>
+
+				<div class="panel panel-default">
+				    <div class="panel-body">
+				        <form>
+				        	<div class="form-group col-md-4">
+
+				        		<label class="label-control" for="pago">Forma de pago</label>
+				        		<select disabled class="form-control" name="pago" id="pago">
+				        			<option style="display:none" value="">Seleccione</option>
+				        			<option value="Tarjeta Credito">Tarjeta Credito</option>
+				        			<option value="Tarjeta Debito">Tarjeta Debito</option>
+				        			<option selected value="Consignación">Deposito Bancario</option>
+				        			<option value="Contra entrega">Contra entrega</option>
+				        		</select>
+				        		<div class="pago-stripe">
+				        			<h4>Pagar con tarjeda crédito</h4>
+					        		<form action="" method="POST">
+									  <script
+									    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+									    data-key="pk_test_Go8oRcGqi7nirJSYWmLddjfd"
+									    data-amount="2000"
+									    data-name="Forshare"
+									    data-description="1 artículo (CO$20.00)"
+									    data-image="images/pago.png"
+									    data-locale="auto">
+									  </script>
+									</form>
+					        	</div>
+
+
+				        	</div>
+
+				        	<div class="col-md-8">
+				        		<div class="panel panel-default">
+								    <div class="panel-body">
+								    	<h4>Resumen</h4>
+								    	
+								    	<div class="cuenta_pago">
+								    		
+								    	</div>
+								        <table class="table">
+								        	<thead style="text-align: center; text-transform: uppercase;">
+								        		<tr>
+								        			<th>Cuenta</th>
+								        			<th>Pago</th>
+								        			<th>Bancos</th>
+								        			<th>Total a pagar</th>
+								        		</tr>
+								        	</thead>
+								        	<tbody>
+								        		<tr>
+								        			<td>CTA. Corrient: 1234567890</td>
+								        			<td>Deposito Bancario</td>
+								        			<td>Davivienda, Caja Social, Bancolombia, Popular</td>
+								        			<td><span>Total: {{precioTotal | currency : 'CO$' : 0}}</span></td>
+								        		</tr>
+								        	</tbody>
+								        </table>
+								        <div class="confirmar">
+								        	<button class="btn btn-success">Confirmar</button>
+								        </div>
+								    </div>
+								</div>
+				        	</div>
+
+				        </form>
+				    </div>
+				</div>
+
+
+		    </div>
+		    
+		</div>
+	</div>
+</div>
+</div>
+

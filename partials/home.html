@@ -24,27 +24,32 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 		<ul class="nav navbar-nav">
-			<li><a href="#">Libros</a></li>
-			<li><a href="#">Música</a></li>
-			<li><a href="#">Videojuegos</a></li>
-			<li><a href="#">Películas</a></li>
-			<li><a href="#">Muebles</a></li>
-			<li><a href="#">Accesosrios</a></li>
-			<li><a href="#">Juguetes</a></li>
+			<li><a href="#/categoria/libros">Libros</a></li>
+			<li><a href="#/categoria/videojuegos">Vídeojuegos</a></li>
+			<li><a href="#/categoria/instrumentos musicales">Instrumentos músicales</a></li>
+			<li><a href="#/categoria/otros">Otros</a></li>
+	<!-- 		<li><a href="#/categoria/peliculas">Películas</a></li>
+			<li><a href="#/categoria/muebles">Muebles</a></li>
+			<li><a href="#/categoria/accesorios">Accesosrios</a></li>
+			<li><a href="#/categoria/juguetes">Juguetes</a></li> -->
 		</ul>
 
-		<ul class="nav navbar-nav navbar-right">
+	<!-- 	<ul class="nav navbar-nav">
 		<li class="dropdown" >
 
 			<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Más <span class="caret"></span></a>
 
 			<ul class="dropdown-menu">
-	            <li><a href="#">Instrumentos musicales</a></li>
-	            <li><a href="#">Accesorios para Vehículos</a></li>
+	            <li><a href="#/categoria/instrumentos musicales">Instrumentos musicales</a></li>
+	            <li><a href="#/categoria/accesorios para vehiculo">Accesorios para Vehículos</a></li>
 	        </ul>
 		</li>
-		
+		</ul> -->
+
+		<ul class="nav navbar-nav navbar-right carrito" ng-controller="Home">
+			<li><a href="#/carrito"><i class="fa fa-cart-arrow-down"></i><span>{{count}}</span></a></li>
 		</ul>
+
 		</div>
 		</div>
 	</div>
@@ -53,73 +58,27 @@
 
 <div class="container view_home">
 <div class="row home">
+	<div class="col-md-12">
+		<h1>Artículos recientes <a class="ver-mas" href="#/articulos/all">Ver más</a></h1>
+		<hr>
+	</div>
 	<div class="col-md-12 ">
-		<h3>Artículos recientes <a class="ver-mas" href="#">Ver más</a></h3>
-		
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
+		<h4>{{mensaje_articulos}}</h4>
+		<div class="col-md-3" ng-repeat="articulo in articulos">
+			<a href="#/articulo/{{articulo._id}}">
+			<div class="panel panel-default">
+			    <div class="panel-body articulo ">
+			        <img class="img-responsive" ng-src="http://forshare.co/test/php/uploads/{{articulo.imagenes[0]}}" alt="Articulo">
 
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
+			        <div class="info-articulo">
+			        	<h4>{{articulo.articulo}}</h4>
+			        	<p maxlength="10">{{articulo.descripcion}}</p>
+			        </div>
+			    </div>
+			    <div class="panel-footer"><span class="label label-warning">{{articulo.precio | currency : 'CO$' : 0}}</span>  <span class="dias"> {{articulo.dias}} días</span></div>
 			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
+			</a>
+		</div>
 	</div>
 </div>
 
@@ -130,72 +89,26 @@
 
 <div class="row home">
 	<div class="col-md-12">
-		<h3>Artículos para prestar <a class="ver-mas" href="#">Ver más</a></h3>
-		
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
+		<h1>Artículos para prestar <a class="ver-mas" href="#/articulos/compartir">Ver más</a></h1>
+		<hr>
+	</div>
+	<div class="col-md-12">
+		<h4>{{mensaje_compartir}}</h4>
+		<div class="col-md-3" ng-repeat="articulo in articulosCompartir">
+			<a href="#/articulo/{{articulo._id}}">
+			<div class="panel panel-default">
+			    <div class="panel-body articulo ">
+			        <img class="img-responsive" ng-src="http://forshare.co/test/php/uploads/{{articulo.imagenes[0]}}" alt="Articulo">
 
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
+			        <div class="info-articulo">
+			        	<h4>{{articulo.articulo}}</h4>
+			        	<p maxlength="10">{{articulo.descripcion}}</p>
+			        </div>
+			    </div>
+			    <div class="panel-footer"><span class="label label-warning">{{articulo.precio | currency : 'CO$' : 0}}</span>  <span class="dias"> {{articulo.dias}} días</span></div>
 			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
+			</a>
+		</div>
 	</div>
 </div>
 
@@ -204,72 +117,26 @@
 
 <div class="row home">
 	<div class="col-md-12">
-		<h3>Artículos para intercambiar <a class="ver-mas" href="#">Ver más</a></h3>
-		
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
+		<h1>Artículos para intercambiar <a class="ver-mas" href="#/articulos/intercambiar">Ver más</a></h1>
+		<hr>
+	</div>
+	<div class="col-md-12">
+		<h4>{{mensaje_intercambiar}}</h4>
+		<div class="col-md-3" ng-repeat="articulo in articulosIntercambiar">
+			<a href="#/articulo/{{articulo._id}}">
+			<div class="panel panel-default">
+			    <div class="panel-body articulo ">
+			        <img class="img-responsive" ng-src="http://forshare.co/test/php/uploads/{{articulo.imagenes[0]}}" alt="Articulo">
 
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
+			        <div class="info-articulo">
+			        	<h4>{{articulo.articulo}}</h4>
+			        	<p maxlength="10">{{articulo.descripcion}}</p>
+			        </div>
+			    </div>
+			    <div class="panel-footer"><span class="label label-warning">{{articulo.precio | currency : 'CO$' : 0}}</span>  <span class="dias"> {{articulo.dias}} días</span></div>
 			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-				    <div class="panel-body articulo ">
-				        <img class="img-responsive" src="images/avatar.jpg" alt="Articulo">
-
-				        <div class="info-articulo">
-				        	<h4>Libro de ruby on rails</h4>
-				        	<p>Libro de ruby on rails Libro de ruby on rails Libro de ruby on rails Libro de ruby</p>
-				        </div>
-				    </div>
-				    <div class="panel-footer"><span class="label label-warning">CO $20.000</span>  <span class="dias">30 días</span></div>
-				</div>
-			</div>
-		</a>
-
+			</a>
+		</div>
 	</div>
 </div>
 </div>

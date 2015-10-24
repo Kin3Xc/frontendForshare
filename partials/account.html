@@ -25,7 +25,7 @@
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#/account">Cuenta</a></li>
 			<li><a href="#/edit_profile">Editar perfil</a></li>
-			<li><a href="#">Mis artículos</a></li>
+			<li><a href="#/mis_articulos">Mis artículos</a></li>
 		</ul>
 
 		</div>
@@ -36,24 +36,26 @@
 
 <div class="container">
 	<div class="row account">
+		<h1>Detalles de la cuenta</h1>
+		<hr>
 		<div class="col-md-12 ">
 			<div class="perfil">
 				<div class="col-md-4 info">
-					<img src="images/avatar.jpg" alt="Elkin Urango">
-					<h2>Elkin Urango</h2>
-					<a href="#"><span>kin3xc@hotmail.com</span></a>
+					<img ng-src="{{account.usuario.avatar}}" alt="Avatar">
+					<h2>{{account.usuario.nombre}}</h2>
+					<a href="#"><span>{{account.usuario.email}}</span></a>
 				</div>
 
 				<div class="col-md-6">
 					<h4>Ocupación</h4>
-					<p>Backend Developer</p>
+					<p>{{account.usuario.ocupacion}}</p>
 
 					<h4>Biografía</h4>
-					<p>Desarrollador web y móvil full stack Nodejs, Express, MongoDB, Angular, HTML5, CSS3, Bootstrap, Ionic Framework, con mas de 3 años de experiencia desarrollando proyectos para diferentes clientes y propios, actualmente me desempeño como programador freelancer.</p>
+					<p>{{account.usuario.biografia}}</p>
 
 					<div class="direccion">
-						<p>Calle 92 # 11 - 32</p>
-						<p><span>Bogotá, Colombia</span></p>
+						<p>{{account.usuario.direccion}}</p>
+						<p><span>{{account.usuario.ciudad}}, {{account.usuario.pais}}</span></p>
 					</div>
 
 					<div class="info-articulos">

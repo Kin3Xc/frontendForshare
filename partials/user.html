@@ -1,0 +1,80 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+
+<!-- barra de categorías -->
+
+<!-- <div class="navbar navbar bar-account">
+	<div clas="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		</div>
+
+		<div class="container">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#/account">Cuenta</a></li>
+			<li><a href="#/edit_profile">Editar perfil</a></li>
+			<li><a href="#/mis_articulos">Mis artículos</a></li>
+		</ul>
+
+		</div>
+		</div>
+	</div>
+</div> -->
+
+
+<div class="container">
+	<div class="row account">
+		<h1>Usuario registrado</h1>
+		<hr>
+		<div class="col-md-12 ">
+			<div class="perfil">
+				<div class="col-md-4 info">
+					<img ng-src="{{user.avatar}}" alt="Avatar">
+					<h2>{{user.nombre}}</h2>
+					<a href="#"><span>{{user.email}}</span></a>
+				</div>
+
+				<div class="col-md-6">
+					<h4>Ocupación</h4>
+					<p>{{user.ocupacion}}</p>
+
+					<h4>Biografía</h4>
+					<p>{{user.biografia}}</p>
+
+					<div class="direccion">
+						<p>{{user.direccion}}</p>
+						<p><span>{{user.ciudad}}, {{user.pais}}</span></p>
+					</div>
+
+					<div class="info-articulos">
+						<div><p>Articulos</p>
+						<span>0</span></div>
+
+						<div><p>Préstamos</p>
+						<span>0</span></div>
+
+						<div><p>Intercambios</p>
+						<span>0</span></div>
+					</div>
+<!-- 
+					<div class="eliminar">
+						<button class="btn btn-danger">Eliminar cuenta</button>
+					</div> -->
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

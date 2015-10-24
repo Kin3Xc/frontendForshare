@@ -14,62 +14,58 @@
 				<h1>Publicar artículo</h1>
 				<p>Ingrese los siguientes campos para publicar su artículo</p>
 			</div>
-			<form ng-submit="publicar.publicar()">
-				<div class="col-md-4">
+
+			
+			<form enctype="multipart/form-data" ng-submit="publicar.compartir()">
+				<div class="col-md-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+					        <h3 class="panel-title">Fomurlario para publicar un nuevo articulo</h3>
+					    </div>
+					<div class="panel-body">
 					<div class="form-group">
 						<label class="label-control" for="articulo">Nombre artículo</label>
 						<div class="input-group text">
-							<span class="input-group-addon icon-text" id="articulo"><i class="fa fa-pencil-square-o"></i></span>
-							<input ng-model="publicar.nombre" class="form-control" type="text" name="articulo" id="articulo">
+							<!-- <span class="input-group-addon icon-text" id="articulo"><i class="fa fa-pencil-square-o"></i></span> -->
+							<span class="input-group-addon icon-text" id="articulo"></span>
+							<input ng-model="publicar.articulo" class="form-control" type="text" name="articulo" id="articulo">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="label-control" for="categoria">Categoría</label>
 						<div class="input-group text">
-							<span class="input-group-addon icon-text" id="categoria"><i class="fa fa-server"></i></span>
+							<!-- <span class="input-group-addon icon-text" id="categoria"><i class="fa fa-server"></i></span> -->
+							<span class="input-group-addon icon-text" id="categoria"></i></span>
 							<!-- <select ng-model="publicar.categoria" class="form-control" name="categoria" id="categoria" ng-options="categoria._id as categoria.nombre for categoria in categorias">
 								<option style="display:none" value="">Seleccione</option>
 							</select> -->
 							<select ng-model="publicar.categoria" class="form-control" name="categoria" id="categoria">
 								<option style="display:none" value="">Seleccione</option>
-								<option value="Libros">Libros</option>
-								<option value="Música">Música</option>
-								<option value="Videojuegos">Videojuegos</option>
-								<option value="Películas">Películas</option>
-								<option value="Muebles">Muebles</option>
-								<option value="Accesorios">Accesorios</option>
-								<option value="Juguetes">Juguetes</option>
-								<option value="Instrumentos musicales">Instrumentos musicales</option>
-								<option value="Instrumentos musicales">Accesorios para Vehículos</option>
+								<option value="libros">Libros</option>
+								<option value="videojuegos">Videojuegos</option>
+								<option value="instrumentos musicales">Instrumentos musicales</option>
+								<option value="otros">Otros</option>
 							</select>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="label-control" for="imagenes">Imagenes</label>
-						<div class="input-group text">
-							<span class="input-group-addon icon-text" id="imagenes"><i class="fa fa-picture-o"></i></span>
-							<input  type="text" readonly="" class="form-control floating-label" placeholder="Puede seleccionar varias imagenes">
-							<input class="form-control" type="file" name="imagenes" id="imagenes">
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="form-group">
 						<label class="label-control" for="valor">Valor</label>
 						<div class="input-group text">
-							<span class="input-group-addon icon-text" id="valor"><i class="fa fa-money"></i></span>
+							<!-- <span class="input-group-addon icon-text" id="valor"><i class="fa fa-money"></i></span> -->
+							<span class="input-group-addon icon-text" id="valor"></span>
 							<input ng-model="publicar.precio" class="form-control" type="text" name="valor" id="valor"> 
 						</div>
-						<!-- <span>Total: $</span> -->
+						<span>Total: $</span>
 					</div>
+
 
 					<div class="form-group">
 						<label class="label-control" for="dias">Dias a prestar</label>
 						<div class="input-group text">
-							<span class="input-group-addon icon-text" id="dias"><i class="fa fa-calendar-check-o"></i></span>
+							<!-- <span class="input-group-addon icon-text" id="dias"><i class="fa fa-calendar-check-o"></i></span> -->
+							<span class="input-group-addon icon-text" id="dias"></span>
 							<input ng-model="publicar.dias" class="form-control" type="text" name="dias" id="dias"> 
 						</div>
 					</div>
@@ -77,7 +73,8 @@
 					<div class="form-group">
 						<label class="label-control" for="tipo">Tipo</label>
 						<div class="input-group text">
-							<span class="input-group-addon icon-text" id="tipo"><i class="fa fa-calendar-check-o"></i></span>
+							<!-- <span class="input-group-addon icon-text" id="tipo"><i class="fa fa-calendar-check-o"></i></span> -->
+							<span class="input-group-addon icon-text" id="tipo"></span>
 							<select ng-model="publicar.tipo" class="form-control" name="tipo" id="tipo" ng-options="tipo.valor as tipo.nombre for tipo in tipos">
 								<option style="display:none" value="">Seleccione</option>
 							</select>
@@ -85,24 +82,58 @@
 						</div>
 					</div>
 
-				</div>
-				<div class="row">
-					<div class="descripcion col-md-8">
-						<div class="form-group">
-							<label class="label-control" for="desc">Descripción</label>
-							<div class="input-group text">
-								<span class="input-group-addon icon-text" id="desc"><i class="fa fa-comment-o"></i></span>
-								<textarea ng-model="publicar.descripcion" class="form-control" name="" id="" cols="5" rows="5"></textarea>
-							</div>
+					<div class="form-group">
+						<label class="label-control" for="tipo">¿En que estado está tu artículo?</label>
+						<div class="input-group text">
+							<!-- <span class="input-group-addon icon-text" id="tipo"><i class="fa fa-calendar-check-o"></i></span> -->
+							<span class="input-group-addon icon-text" id="tipo"></span>
+							<input ng-model="publicar.observacion" class="form-control" type="text">
 
-							<div class="form-group btn-publicar">
-								<button type="submit" class="btn btn-warning">Publicar artículo</button>
-							</div>
+						</div>
+					</div>
+
+				
+					<div class="form-group">
+						<label class="label-control" for="imagenes">Imagenes</label>
+						<div class="input-group text">
+							<!-- <span class="input-group-addon icon-text" id="imagenes"><i class="fa fa-picture-o"></i></span> -->
+							<span class="input-group-addon icon-text" id="imagenes"></span>
+							<!-- <input  type="text" readonly="" class="form-control floating-label" placeholder="Puede seleccionar varias imagenes"> -->
+							<input file-model="publicar.imagenes" class="form-control" type="file" multiple="multiple" name="imagenes_articulos[]" id="imagenes_articulos">
+						</div>
+					</div>
+				
+					<div class="form-group">
+						<label class="label-control" for="desc">Descripción</label>
+						<div class="input-group text">
+							<!-- <span class="input-group-addon icon-text" id="desc"><i class="fa fa-comment-o"></i></span> -->
+							<span class="input-group-addon icon-text" id="desc"></span>
+							<textarea ng-model="publicar.descripcion" class="form-control" name="" id="" cols="5" rows="5"></textarea>
+						</div>
+
+						<div class="form-group btn-publicar">
+							<button type="submit" class="btn btn-warning">Publicar artículo</button>
 						</div>
 					</div>
 				</div>
+				</div>
+				</div>
 
 			</form>
+			
+			<div class="col-md-1"></div>
+
+			<div class="col-md-5">
+			<div class="panel panel-default">
+			    <div class="panel-heading">
+			        <h3 class="panel-title">Algunas recomendaciones</h3>
+			    </div>
+			    <div class="panel-body">
+					
+			    </div>
+			</div>
+			</div>
+
 		</div>
 	</div>
 </div>

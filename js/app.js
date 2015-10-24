@@ -1,6 +1,6 @@
 
 // modulo principal de la aplicación
-var app = angular.module('forshare', ['forshare.controllers', 'forshare.services', 'ngStorage']);
+var app = angular.module('forshare', ['forshare.controllers', 'forshare.services', 'ngStorage', 'firebase']);
 
 
 //app.constant('firebaseUrl', 'https://tucocina.firebaseio.com/');
@@ -45,8 +45,55 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $location
 			controllerAs: 'publicar'
 		})
 
+		.state('articulo',{
+			url: '/articulo/:id',
+			templateUrl: 'partials/articulo.html',
+			controller: 'ArticuloID',
+			controllerAs: 'articulo'
+		})
+
+		.state('articulos',{
+			url: '/articulos/:nombre',
+			templateUrl: 'partials/articulos.html',
+			controller: 'Articulos',
+			controllerAs: 'articulos'
+		})
+
+		.state('categoria',{
+			url: '/categoria/:categoria',
+			templateUrl: 'partials/categoria.html',
+			controller: 'Categorias',
+			controllerAs: 'categorias'
+		})
+
+		.state('historial',{
+			url: '/historial',
+			templateUrl: 'partials/historial.html'
+		})
+
+		.state('carrito',{
+			url: '/carrito',
+			templateUrl: 'partials/carrito.html'
+		})
+
+		.state('mis_articulos',{
+			url: '/mis_articulos',
+			templateUrl: 'partials/mis_articulos.html'
+		})
+
+		.state('notification',{
+			url: '/notification',
+			templateUrl: 'partials/notification.html'
+		})
+
+		.state('user',{
+			url: '/user/:id',
+			templateUrl: 'partials/user.html',
+			controller: 'User'
+		})
+
 		// .state('detalleArticulo',{
-		// 	url: '/articulo/:idArticulo',
+		// 	url: '/articulo/:id',
 		// 	templateUrl: 'partials/detalle-articulo.html'
 		// })
 
